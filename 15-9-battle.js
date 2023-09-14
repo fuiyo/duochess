@@ -14,4 +14,4 @@ const participant2 = participants.data.find(e=>e?.participant?.id == player2)
 data.push([participant1.participant.name, participant2.participant.name])
 })
 
-fs.writeFileSync("./9-15.json", JSON.stringify(data))
+fs.writeFileSync("./15-9.json", JSON.stringify(data))
