@@ -1,6 +1,7 @@
 const axios = require('axios');
 const fs = require('fs');
 
+(async () => {
 const participants = await axios(`https://api.challonge.com/v1/tournaments/13468288/participants.json?api_key=V7xd1G8VoUp31zfmqvmCrnemBtXjDVmI6rc8fHn8`)
 const data = [];
 const groups = await axios(`https://api.challonge.com/v1/tournaments/13468288/matches.json?api_key=V7xd1G8VoUp31zfmqvmCrnemBtXjDVmI6rc8fHn8`)
@@ -15,3 +16,4 @@ data.push([participant1.participant.name, participant2.participant.name])
 })
 
 fs.writeFileSync("./15-9.json", JSON.stringify(data))
+})();
